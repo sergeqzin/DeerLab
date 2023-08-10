@@ -1080,10 +1080,10 @@ def ex_ridme(tau1, tau2, pathways=[1,2,3,4], pulselength=0.016):
     """
     # Theoretical refocusing times
     def reftimes(tau1,tau2):
-        tref = [   0,
-                tau2,
-               -tau1,
-           tau2-tau1]
+        tref = [tau1,
+           tau1+tau2,
+                   0,
+                tau2]
         # Sort according to pathways order
         if pathways is not None:
             tref = [tref[pathway-1] for pathway in pathways]
